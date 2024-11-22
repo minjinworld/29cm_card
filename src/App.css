@@ -1,0 +1,164 @@
+@import url("https://fonts.cdnfonts.com/css/campton");
+
+* {
+  font-family: "Campton", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------- */
+
+.flex_box {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 62vw;
+  margin: 0 auto;
+  font-weight: 400;
+
+  /* 카운터 초기화 */
+  counter-reset: list-number 0;
+  /* counter-reset 속성을 사용해 초깃값 0으로 초기화 */
+}
+
+.out_box {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-right: 12px;
+  width: calc(33.333% - 12px);
+}
+
+.img_box {
+  width: 100%;
+  height: 400px;
+
+  position: relative;
+}
+
+.img_box::before {
+  /* css 자동 넘버링 */
+  content: counter(list-number);
+  counter-increment: list-number 1;
+
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_content {
+  padding: 16px 0 12px;
+}
+
+.brand_name {
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product_name {
+  font-size: inherit;
+  font-weight: 300;
+}
+
+.text_center {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 11px;
+  color: rgb(196, 196, 196);
+  text-decoration: line-through;
+  font-weight: 400;
+  display: block;
+}
+
+.discount {
+  margin-right: 5px;
+  color: rgb(255, 72, 0);
+}
+
+.discount_price {
+  font-weight: 600;
+  color: #000;
+}
+
+.coupon {
+  display: block;
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgb(29, 29, 29);
+  background-color: rgb(244, 244, 244);
+  border-radius: 1px;
+  margin-top: 6px;
+  line-height: 18px;
+}
+
+.text_bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgb(93, 93, 93);
+}
+
+.text_bottom button {
+  width: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.text_bottom svg {
+  margin-right: 4px;
+}
+
+.text_bottom svg path {
+  fill: none;
+  stroke: rgb(93, 93, 93);
+}
